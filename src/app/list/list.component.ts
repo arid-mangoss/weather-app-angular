@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { WeatherHttpService } from '../service/weather-http.service';
+import { WeatherHttpService } from '../service/weather.service';
 import { Subscription } from 'rxjs';
 import { LocaleData } from '../models/Locale';
 

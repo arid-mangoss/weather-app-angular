@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WeatherHttpService } from 'src/app/service/weather-http.service';
+import { WeatherHttpService } from 'src/app/service/weather.service';
 
 @Component({
   selector: 'app-list-item',

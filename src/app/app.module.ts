@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { WeatherHttpService } from './service/weather-http.service';
+import { WeatherHttpService } from './service/weather.service';
 import { SavedListComponent } from './saved-list/saved-list.component';
 import { InputComponent } from './input/input.component';
 import { ListComponent } from './list/list.component';
