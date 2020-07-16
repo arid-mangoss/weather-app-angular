@@ -1,9 +1,23 @@
-<input [(ngModel)]="city" />
-<p>{{ city }}</p>
+<div class="input">
+  <input
+    [(ngModel)]="locale"
+    (ngModelChange)="sendKeyPress($event)"
+    (keyup.enter)="onSubmit()"
+  />
+  <button (click)="onSubmit()">Click to search</button>
+  <p *ngIf="foundLocale">
+    Found Locale: {{ foundLocale.locale }}, {{ foundLocale.country }}
+  </p>
+</div>
 
-<button (click)="getData()">Click to search</button>
-
-<div *ngIf="outputData">
-  <p>{{ outputData }}</p>
-  <img src="{{ 'http://openweathermap.org/img/wn/'+ weatherIcon +'.png' }}" />
+<div class="locales-container">
+  <div *ngFor="let locale2 of data; let i = index" class="locale" >
+    <p>
+      {{ locale2.locale + ", " + locale2.country + " " + locale2.temp }}
+    </p>
+    <img
+      src="{{ 'http://openweathermap.org/img/wn/' + locale2.icon + '.png' }}"
+    />
+    <span (click)="removeLocale(i)">XXXXXX</span>
+  </div>
 </div>
