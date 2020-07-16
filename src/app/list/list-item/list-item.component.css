@@ -1,0 +1,11 @@
+.locale {
+  margin: 3px auto;
+  width: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  margin: 15px;
+}

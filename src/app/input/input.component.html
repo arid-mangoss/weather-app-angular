@@ -1,0 +1,11 @@
+<div class="input">
+  <input
+    [(ngModel)]="locale"
+    (ngModelChange)="sendKeyPress($event)"
+    (keyup.enter)="onSubmit()"
+  />
+  <button (click)="onSubmit()">Click to search</button>
+  <p *ngIf="foundLocale">
+    Found Locale: {{ foundLocale.locale }}, {{ foundLocale.country }}
+  </p>
+</div>

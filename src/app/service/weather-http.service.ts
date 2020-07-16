@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { LocaleData } from '../models/Locale';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { LocaleData } from '../models/Locale';
 })
 export class WeatherHttpService {
   data: LocaleData[] = [];
+
+  dataSubject = new Subject<LocaleData[]>();
 
   constructor(private http: HttpClient) {}
 
@@ -21,9 +23,14 @@ export class WeatherHttpService {
   addLocale(locale: LocaleData) {
     if (this.data.indexOf(locale) === -1) {
       this.data.push(locale);
+      this.dataSubject.next(this.data);
+      console.log('next called')
     }
+
   }
+
   removeLocale(index) {
     this.data.splice(index, 1);
+    this.dataSubject.next(this.data);
   }
 }
