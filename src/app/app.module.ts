@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { WeatherHttpService } from './service/weather.service';
+import { WeatherService } from './service/weather.service';
 import { SavedListComponent } from './saved-list/saved-list.component';
 import { InputComponent } from './input/input.component';
 import { ListComponent } from './list/list.component';
@@ -23,7 +23,7 @@ import { ListItemComponent } from './list/list-item/list-item.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [WeatherHttpService],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherHttpService } from '../service/weather.service';
+import { WeatherService } from '../service/weather.service';
 import { Subscription, Subject } from 'rxjs';
 import { LocaleData } from '../models/Locale';
 import { debounceTime, distinct } from 'rxjs/operators';
@@ -18,7 +18,7 @@ export class InputComponent implements OnInit {
   keySubscription: Subscription;
 
   // bring in the weather service
-  constructor(private weatherService: WeatherHttpService) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
     // calls getdata when the user types

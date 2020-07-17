@@ -1,15 +1,10 @@
 <div class="locale">
-  <p>
-    {{
-      locale.locale +
-        ", " +
-        locale.country +
-        ":  " +
-        locale.temp +
-        "&deg;F -- " +
-        locale.description
-    }}
-  </p>
-  <img src="{{ 'http://openweathermap.org/img/wn/' + locale.icon + '.png' }}" />
+  <h4>
+    {{ locale.locale + ", " + locale.country }}
+  </h4>
+  <p>{{ locale.temp + "&deg;F -- " + locale.description }}</p>
+  <img
+    src="{{ 'http://openweathermap.org/img/wn/' + locale.icon + '@2x.png' }}"
+  />
   <span (click)="removeLocale(index)">X</span>
 </div>

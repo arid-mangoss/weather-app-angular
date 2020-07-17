@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WeatherHttpService } from 'src/app/service/weather.service';
+import { WeatherService } from 'src/app/service/weather.service';
 
 @Component({
   selector: 'app-list-item',
@@ -10,7 +10,7 @@ export class ListItemComponent implements OnInit {
   @Input() locale;
   @Input() index;
 
-  constructor(private weatherService: WeatherHttpService) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {}
 

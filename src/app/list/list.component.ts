@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { WeatherHttpService } from '../service/weather.service';
+import { WeatherService } from '../service/weather.service';
 import { Subscription } from 'rxjs';
 import { LocaleData } from '../models/Locale';
 
@@ -12,12 +12,13 @@ export class ListComponent implements OnInit, OnDestroy {
   dataSubscription: Subscription;
   data: LocaleData[];
 
-  constructor(private weatherService: WeatherHttpService) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     this.dataSubscription = this.weatherService.dataSubject.subscribe(
       (data: LocaleData[]) => {
         this.data = data;
+        console.log('list comp data', this.data)
       }
     );
   }

@@ -1,1 +1,6 @@
-<p>saved-list works!</p>
+<button (click)="addList()">Add list</button>
+<button (click)="loadList()">Load list</button>
+
+<ul *ngFor="let list of savedLists">
+  <li *ngFor="let locale of list">{{locale}}</li>
+</ul>
