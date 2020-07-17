@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { WeatherHttpService } from './service/weather.service';
+import { WeatherService } from './service/weather.service';
 
 import { LocaleData } from './models/Locale';
 import { debounceTime, distinct } from 'rxjs/operators';
